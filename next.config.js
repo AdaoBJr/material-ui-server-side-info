@@ -4,9 +4,6 @@ const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 const nextConfig = {
   pageExtensions: ['page.tsx', 'page.ts', 'api.ts'],
   webpack: (config, options) => {
-    const { isServer } = options;
-    config.experiments = { topLevelAwait: true };
-
     config.plugins.push(
       new NextFederationPlugin({
         name: 'info',
@@ -14,7 +11,7 @@ const nextConfig = {
         exposes: {
           './ProductInfo': './src/microfrontend/modules/ProductInfo',
         },
-        filename: 'static/chunks/primaryEntry.js',
+        filename: 'static/chunks/remoteEntry.js',
       })
     );
     return config;
