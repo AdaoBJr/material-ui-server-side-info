@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Stack} from '@mui/material';
+import { Grid, Stack } from '@mui/material';
 
 import { home } from 'articles';
 import { Body, Title } from 'lib/shared';
@@ -19,6 +19,7 @@ const Home: React.FC = () => {
             </Title>
           </Stack>
         </Grid>
+      </Grid>
     </Body>
   );
 };
