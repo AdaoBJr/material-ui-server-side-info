@@ -8,3 +8,8 @@ export const SxTitleHome: SxProps<Theme> = {
 export const SxSubTitleHome: SxProps<Theme> = {
   fontSize: ({ spacing }) => spacing(6),
 };
+
+export const SxProductHome: SxProps<Theme> = {
+  color: 'blue',
+  fontSize: ({ spacing }) => spacing(6),
+};
