@@ -24,6 +24,14 @@ const nextConfig = {
       },
     ];
   },
+  experimental: {
+    esmExternals: false,
+  },
+  /**
+   *
+   * @param {import('webpack').Configuration} config
+   * @returns {import('webpack').Configuration}
+   */
   webpack: (config, options) => {
     config.plugins.push(
       new NextFederationPlugin({
@@ -33,6 +41,21 @@ const nextConfig = {
           './ProductInfo': './src/microfrontend/modules/ProductInfo',
         },
         filename: 'static/chunks/remoteEntry.js',
+        shared: {
+          '@emotion/': {
+            eager: true,
+            requiredVersion: false,
+            singleton: true,
+          },
+          '@mui/': {
+            requiredVersion: false,
+            singleton: true,
+            eager: true,
+          },
+        },
+        extraOptions: {
+          exposePages: true,
+        },
       })
     );
     return config;

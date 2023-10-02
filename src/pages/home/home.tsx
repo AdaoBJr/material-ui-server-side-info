@@ -3,13 +3,13 @@ import { Grid, Stack } from '@mui/material';
 
 import { home } from 'articles';
 import { Body, Title } from 'lib/shared';
-import { SxProductHome, SxSubTitleHome, SxTitleHome } from './styles';
+import { SxBodyHome, SxProductHome, SxSubTitleHome, SxTitleHome } from './styles';
 import { Produto } from 'bff/types/domain';
 import { useBFFVendas } from 'services/infra';
 import { GetProduct } from 'types/domain';
 
 interface HomeProps {
-  produtoId: string;
+  produtoId?: string;
 }
 const Home: React.FC<HomeProps> = ({ produtoId = '123455' }) => {
   const [produto, setProduto] = useState<GetProduct>();
@@ -26,7 +26,7 @@ const Home: React.FC<HomeProps> = ({ produtoId = '123455' }) => {
   }, []);
 
   return (
-    <Body>
+    <Body sx={SxBodyHome}>
       <Grid container spacing={10}>
         <Grid item xs={12} md={6}>
           <Stack rowGap={7} marginLeft={{ xs: 0, sm: 12 }}>

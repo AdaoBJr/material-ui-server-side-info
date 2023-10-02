@@ -1,7 +1,11 @@
-import React, { PropsWithChildren } from 'react';
-import { Box } from '@mui/material';
+import React from 'react';
+import { Box, BoxProps } from '@mui/material';
 import { SxBody } from './styles';
 
-export const Body: React.FC<PropsWithChildren> = ({ children }) => (
-  <Box sx={SxBody}>{children}</Box>
+interface BodyProps extends BoxProps {}
+
+export const Body: React.FC<BodyProps> = ({ children, sx, ...rest }) => (
+  <Box sx={SxBody(sx)} {...rest}>
+    {children}
+  </Box>
 );

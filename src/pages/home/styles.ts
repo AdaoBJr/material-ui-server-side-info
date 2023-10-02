@@ -1,5 +1,10 @@
 import { SxProps, Theme } from '@mui/material';
 
+export const SxBodyHome: SxProps<Theme> = {
+  height: '100vh',
+  backgroundColor: 'grey.900',
+};
+
 export const SxTitleHome: SxProps<Theme> = {
   color: 'text.primary',
   fontSize: ({ spacing }) => ({ xs: spacing(8), sm: spacing(12) }),
