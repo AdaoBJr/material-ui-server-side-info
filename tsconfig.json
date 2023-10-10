@@ -19,10 +19,10 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./src/",
     "paths": {
-      "@/*": ["./src/*"]
-    },
-    "baseUrl": "./src/"
+      "@sn-vendas-ds": ["financiamento/frontend/lib/@sn-vendas-ds"]
+    }
   },
   "include": [
     "next-env.d.ts",

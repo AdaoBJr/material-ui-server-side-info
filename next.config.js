@@ -38,7 +38,8 @@ const nextConfig = {
         name: 'info',
         remotes: {},
         exposes: {
-          './ProductInfo': './src/microfrontend/modules/ProductInfo',
+          './ProductInfo':
+            './src/financiamento/frontend/microfrontend/modules/ProductInfo',
         },
         filename: 'static/chunks/remoteEntry.js',
         shared: {

@@ -4,7 +4,7 @@ import { AppProps as AppPropsNext } from 'next/app';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 
-import { theme, createEmotionCache } from 'theme';
+import { theme, createEmotionCache } from 'financiamento/frontend/theme';
 
 const clientSideEmotionCache = createEmotionCache();
 

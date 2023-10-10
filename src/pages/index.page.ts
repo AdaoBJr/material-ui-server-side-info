@@ -1,1 +1,1 @@
-export { default } from './home';
+export { default } from 'financiamento/frontend/lib/views/Home';
