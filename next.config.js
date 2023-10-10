@@ -1,5 +1,6 @@
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 /** @type {import('next').NextConfig} */
+const dependencies = require('./package.json').dependencies;
 
 const nextConfig = {
   pageExtensions: ['page.tsx', 'page.ts', 'api.ts'],
@@ -24,9 +25,6 @@ const nextConfig = {
       },
     ];
   },
-  experimental: {
-    esmExternals: false,
-  },
   /**
    *
    * @param {import('webpack').Configuration} config
@@ -43,19 +41,41 @@ const nextConfig = {
         },
         filename: 'static/chunks/remoteEntry.js',
         shared: {
-          '@emotion/': {
+          '@emotion/react': {
             eager: true,
-            requiredVersion: false,
+            requiredVersion: dependencies['@emotion/react'],
             singleton: true,
           },
-          '@mui/': {
-            requiredVersion: false,
+          '@emotion/server': {
+            eager: true,
+            requiredVersion: dependencies['@emotion/server'],
+            singleton: true,
+          },
+          '@emotion/styled': {
+            eager: true,
+            requiredVersion: dependencies['@emotion/styled'],
+            singleton: true,
+          },
+          '@mui/material': {
+            requiredVersion: dependencies['@mui/material'],
             singleton: true,
             eager: true,
           },
-        },
-        extraOptions: {
-          exposePages: true,
+          '@mui/icons-material': {
+            requiredVersion: dependencies['@mui/icons-material'],
+            singleton: true,
+            eager: true,
+          },
+          '@mui/lab': {
+            requiredVersion: dependencies['@mui/lab'],
+            singleton: true,
+            eager: true,
+          },
+          '@mui/styles': {
+            requiredVersion: dependencies['@mui/styles'],
+            singleton: true,
+            eager: true,
+          },
         },
       })
     );
