@@ -1,5 +1,5 @@
 import { apiStock, AxiosHttpClient } from '../../api';
-import { GetStock } from 'types/domain';
+import { GetStock } from 'financiamento/frontend/types/domain';
 
 export const useStockAPI = () => {
   const BFFClient = AxiosHttpClient(apiStock);

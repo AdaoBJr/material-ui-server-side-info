@@ -1,5 +1,5 @@
 import { apiStock } from '../axios';
-import { AxiosHttpClient } from 'bff/core';
+import { AxiosHttpClient } from 'financiamento/bff/core';
 import { ProdutoStockProvider } from './produtoStockProvider';
 
 const axiosClient = new AxiosHttpClient(apiStock); //qual melhor local para injeção de dependencia
